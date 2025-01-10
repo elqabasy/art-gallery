@@ -1,0 +1,118 @@
+/* 
+    ID & Name: 222101784 Nour Ahmed Khalaf Mehani
+    ID & Name: 222200002 Mohamed elsayed Nagy
+    Course: CSE211 Web Programming
+    Assignment: Course Project
+    Date: 9 january 2025
+    Description: the purpose of this css file is to style the FAQ page (faq.html) of the website
+*/
+#top-logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+#top-logo img{
+    width: 90px;
+    height: auto;
+}
+#page-title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #BF939B;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #F2F2F2;
+    border-bottom: 2px solid #BF9D8A;
+}
+#header{
+    background-color: #F2F2F2;
+    padding-left: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#main-navigation{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #BF9D8A;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+#main-navigation a{
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#main-navigation a:hover{
+    background-color: #FFFFFF;
+    color: #BF9D8A;
+    text-decoration: underline;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+main{
+    background-color: #F9F9F9;
+}
+.faq{
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+.faq h2{
+    text-align: center;
+    color: #BF939B;
+}
+.faq-item{
+    margin-bottom: 20px;
+}
+.faq-item h3{
+    color: #333333;
+    cursor: pointer;
+    background: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+.faq-item p{
+    display: none;
+    margin: 10px 0 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+#footer{
+    border-color: #F2F2F2;
+    color: #BF939B;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid #F2F2F2;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+#footer a{
+    color: #bf8b94;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+#footer a:hover{
+    color: #8FB2BF;
+    text-decoration: underline;
+}

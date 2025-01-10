@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Management</title>
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+    <div id="top-logo">
+        <img src="../images/image02.png" alt="Art Gallery Collective logo">
+    </div>
+    <h1 id="page-title">Student Details</h1>
+    <header id="header">
+        <nav id="main-navigation">
+            <a href="../index.html">Home</a>&nbsp;|
+            <a href="../pages/about.html">About Us </a>&nbsp;|
+            <a href="../pages/contact.html">Contact Us</a>&nbsp;|
+            <a href="https://www.gu.edu.eg/">GU</a>&nbsp;|
+            <a href="../pages/registration.html">Registration</a>&nbsp;|
+            <a href="../pages/faq.html">FAQ</a>&nbsp;&nbsp;|
+            <a href="../pages/schedual.html">Scheduals</a>&nbsp;&nbsp;|
+            <a href="../pages/Forms.html">Forms</a>
+        </nav>
+    </header>
+    <section id="image-section">
+        <img src="../images/image02.png" width="150" height="100">
+    </section>
+
+    <div class="group">
+        <label class="label_t" for="action"></label>
+        <select id="action" onchange="toggleForm()">
+            <option value="input">Input the student grades</option>
+            <option value="research">Research about grades</option>
+        </select>
+    </div>
+
+    <form id="grade_form" class="hidden">
+        <div class="group">
+            <label class="label_t" for="student_Name">Student Name:</b></label>
+            <input type="text" id="student_Name" required>
+        </div>
+        <div class="group">
+            <label class="label_t" for="student_ID">Student ID: </b></label>
+            <input type="number" id="student_ID" required>
+        </div>
+        <div class="group">
+            <label class="label_t" for="course">Select course: </label>
+            <select id="course" required>
+                <option value="CSE211">Web Programming (CSE211)</option>
+                <option value="CSE271">Introduction to Parallel Computing (CSE271)</option>
+                <option value="CSE233">Operating System (CSE233)</option>
+                <option value="CSE261">Computer Network (CSE261)</option>
+                <option value="AIE111">Artificial Intelligence (AIE111)</option>
+            </select>
+        </div>
+        <div id="input_field" class="hidden">
+            <div>
+                <label class="label_t" for="exams">Exams (of 50):</label>
+                <input type="number" id="exams" max="50">
+            </div>
+            <div>
+                <label class="label_t" for="assignments">Assignments (of 20):</label>
+                <input type="number" id="assignments" max="20">
+            </div>
+            <div>
+                <label class="label_t" for="quizzes">Quizzes (of 10):</label>
+                <input type="number" id="quizzes" max="10">
+            </div>
+            <div>
+                <label class="label_t" for="project"> Project (of 20):</label>
+                <input type="number" id="project" max="20">
+            </div>
+            <button type="button" onclick="saveGrades()">Save Grades</button>
+        </div>
+        <div id="researchFields" class="hidden">
+            <button type="button" onclick="getGrades()">Research about Grades</button>
+        </div>
+    </form>
+
+    <div class="result" id="result"></div>
+    
+    <script>
+        const student_Grades={};
+        function toggleForm(){
+            const action = document.getElementById('action').value;
+            const grade_form = document.getElementById('grade_form');
+            const input_field = document.getElementById('input_field');
+            const researchFields = document.getElementById('researchFields');
+
+        grade_form.classList.remove('hidden');
+
+        if (action === 'input'){
+            input_field.classList.remove('hidden');
+            researchFields.classList.add('hidden');
+            document.getElementById('student_Name').required =true;
+        }
+        else {
+            researchFields.classList.remove('hidden');
+            input_field.classList.add('hidden');
+            document.getElementById('student_Name').required = false;
+        }
+        }
+        function saveGrades(){
+            const name = document.getElementById('student_Name').value;
+            const id = document.getElementById('student_ID').value;
+            const course = document.getElementById('course').value;
+            const exams = parseFloat(document.getElementById('exams').value) || 0;
+            const assignments = parseFloat(document.getElementById('assignments').value) || 0;
+            const quizzes = parseFloat(document.getElementById('quizzes').value) || 0;
+            const project = parseFloat(document.getElementById('project').value) || 0;
+
+            if (!id || !course || !name){
+                document.getElementById('result').innerText = "Error: Please fill out all required fields.";
+                return;
+            }
+
+            if (!student_Grades[id]){
+                student_Grades[id]={ name, grades:{} };
+            }
+            student_Grades[id].grades[course] = { exams , assignments , quizzes , project};
+            document.getElementById('result').innerText = `Grades saved successfully for ${name} (${course}).`;
+        }
+
+        function getGrades(){
+            const id = document.getElementById('student_ID').value;
+            const course = document.getElementById('course').value;
+
+            if (!id || !course) {
+                document.getElementById('result').innerText = "Error: Please provide the student ID and select a subject.";
+                return;
+            }
+
+            const student = student_Grades[id];
+
+            if (!student || !student.grades[course]){
+                document.getElementById('result').innerText = `No grades found for this student in ${course}.`;
+                return;
+            }
+            const { exams, assignments, quizzes, project} = student.grades[course];
+            document.getElementById('result').innerText = 
+                `Grades for ${student.name} (${course}):
+                Exams: ${exams}, Assignments: ${assignments}, Quizzes: ${quizzes}, Projects: ${projects}.`;
+
+        }
+
+        // form of student grade calculator
+    </script>
+    <hr>
+    <h3 id="SGC">Student Grade Calculator</h3>
+    <form id="grade_calculator">
+        <div class="form_group">
+            <label for="assignments_a">Assignments (Out of 20):</label>
+            <input class="input_i" type="number" id="assignments_a" max="20" required>
+        </div>
+        <div class="form_group">
+            <label for="quizzes_q">Quizzes (Out of 10):</label>
+            <input class="input_i" type="number" id="quizzes_q" max="10" required>
+        </div>
+        <div class="form_group">
+            <label for="exams_e">Exams (Out of 50):</label>  
+            <input class="input_i" type="number" id="exams_e" max="50" required>
+        </div>
+        <div class="form_group">
+            <label for="project_p">Project (Out of 20):</label>
+            <input class="input_i" type="number" id="project_p" max="20" required>
+        </div>
+        <button class="button_b" type="button" onclick="calculateGrade()">Calculate Grade</button>
+    </form>
+    <div class="result_r" id="result_r"></div>
+    <script>
+        function calculateGrade(){
+            const assignments_a = parseFloat(document.getElementById('assignments_a').value) ||0;
+            const quizzes_q = parseFloat(document.getElementById('quizzes_q').value) ||0;
+            const exams_e = parseFloat(document.getElementById('exams_e').value) ||0;
+            const project_p = parseFloat(document.getElementById('project_p').value) ||0;
+            if (assignments_a > 20 || quizzes_q > 10 || exams_e >50 || project_p > 20){
+                document.getElementById('result_r').innerText = "Error: The percentage of total is greater than the maximum percentage and please put the correct grade of each label ";
+                return;
+            }
+
+            const totalScore = assignments_a + quizzes_q + exams_e + project_p;
+            const maxScore = 20 + 10 + 50 + 20; 
+            const percentage = (totalScore / maxScore) * 100;
+            let grade = '';
+            if (totalScore >=97){
+                grade = 'A+';
+            } else if (totalScore >=93){
+                grade = 'A';
+            } else if (totalScore >=89){
+                grade = 'A-';
+            } else if (totalScore >=80){
+                grade = 'B';
+            } else if (totalScore >=70){
+                grade = 'C';
+            } else if (totalScore >=60){
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+
+            document.getElementById('result_r').innerText=
+                `Total Score: ${totalScore.toFixed(2)} / ${maxScore}\nPercentage: ${percentage.toFixed(2)}%\nGrade: ${grade}`;
+        }
+    </script>
+    <footer id="footer">
+        <hr>
+            <a href="mailto:nourkhalaf@gmail.com">Email Us</a>&nbsp;|
+            <a href="https://www.facebook.com/">Facebook</a>&nbsp;|
+            <a href="https://www.instagram.com/">Instagram</a>&nbsp;|
+            <a href="../pages/about.html">About Us</a><br>
+            &copy; Nour Ahmed Khalaf Mehani 222101784 , mohamed elsayed nagy 222200002 , all rights reserved.<br>   
+    </footer>
+</body>
+</html>

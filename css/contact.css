@@ -1,0 +1,138 @@
+/* 
+    ID & Name: 222101784 Nour Ahmed Khalaf Mehani
+    ID & Name: 222200002 Mohamed elsayed Nagy
+    Course: CSE211 Web Programming
+    Assignment: Course Project
+    Date: 9 january 2025
+    Description: the purpose of this css file is to style the contact us page (contact.html) of the website
+*/
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+#top-logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+#top-logo img{
+    width: 90px;
+    height: auto;
+}
+#page-title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #BF939B;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #F2F2F2;
+    border-bottom: 2px solid #BF9D8A;
+}
+#header{
+    background-color: #F2F2F2;
+    padding-left: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#main-navigation{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #BF9D8A;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+#main-navigation a{
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#main-navigation a:hover{
+    background-color: #FFFFFF;
+    color: #BF9D8A;
+    text-decoration: underline;
+}
+
+#team{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #F2F2F2;
+    border:1px solid #BF9D8A;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+#team p{
+    flex: 1;
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border: 1px solid #BF939B;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+#team p img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #BF9D8A;
+}
+#team p span{
+    font-weight: bold;
+    color:#BF939B;
+}
+#team p{
+    font-size: 1rem;
+    color: #333333;
+    margin: 0;
+}
+.mem_d a{
+    text-decoration: none;
+    color: #333333;
+}
+.mem_d a:hover{
+    text-decoration: underline;
+    color: #8FB2BF;
+}
+h2{
+    color:#BF939B ;
+}
+#gu_image{
+    margin-left: 25px;
+}
+.gu_d b{
+    font-size: 1.2rem;
+    color: #bf8b94;
+}
+.gu_d a{
+    text-decoration: none;
+    color:#333333 ;
+}
+.gu_d a:hover{
+    text-decoration: underline;
+    color: #8FB2BF;
+}
+#footer{
+    clear: both;
+    text-align: center;
+    padding: 1rem 0;
+    box-sizing: border-box;
+    color: #BF939B
+}
+#footer a{
+    color: #bf8b94;
+    text-decoration: none;
+    
+}
+#footer a:hover{
+    color: #8FB2BF;
+    text-decoration: underline;
+}

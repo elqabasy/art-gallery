@@ -1,0 +1,79 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Art Gallery Collective</title>
+    <link rel="stylesheet" href="../css/faq.css">
+    <script>
+        function toggleFaq(event) {
+            const content = event.target.nextElementSibling;
+            if(content.style.display === "block") {
+               content.style.display ="none";
+            }else{
+                content.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="top-logo">
+        <img src="../images/image02.png" alt="Art Gallery Collective logo">
+    </div>
+    <h1 id="page-title">FAQ</h1>
+    <header id="header">
+        <nav id="main-navigation">
+            <a href="../index.html">Home</a>|
+            <a href="../pages/about.html">About Us </a>|
+            <a href="../pages/contact.html">Contact Us</a>|
+            <a href="https://www.gu.edu.eg/">GU</a>&nbsp;|
+            <a href="../pages/registration.html">Registration</a>|
+            <a href="../pages/faq.html">FAQ</a>&nbsp;|
+            <a href="/pages/schedual.html">Scheduals</a>&nbsp;|
+            <a href="../pages/Forms.html">Forms</a>
+        </nav>
+    </header>
+    <main>
+        <div class="faq">
+            <h2>Have Questions? we are here to help!</h2>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(event)">what are our working hours?</h3>
+                <p>our gallery is open from 9:00 am till 8:00pm , Monday to Saturday </p>
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(event)">do you provide workshops?</h3>
+                <p>yes!, we provide workshops for all ages. check our <a href="../pages/schedual.html">schedual</a> page for more details!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(event)">is there any discounts for students?</h3>
+                <p>yes, there is 10% discount.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(event)">Is Photography allowed in the gallery?</h3>
+                <p>Photography is allowed ,but flash Photography is strictly prohipited to protect the artworks</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(event)">Can i book the gallery space for private events?</h3>
+                <p>yes, the gallery is avilable for private events, please reach out to us through <a href="../pages/contact.html">Contact Us</a> page.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(event)">are the artworks in the gallery for sale?</h3>
+                <p>some artworks are available for purchase</p>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <a href="mailto:nourkhalaf@gmail.com">Email Us</a>&nbsp;|
+        <a href="https://www.facebook.com/">Facebook</a>&nbsp;|
+        <a href="https://www.instagram.com/">Instagram</a>&nbsp;|
+        <a href="../pages/about.html">About Us</a><br>
+        &copy; Nour Ahmed Khalaf Mehani 222101784 , mohamed elsayed nagy 222200002 , all rights reserved.     
+    </footer>
+</body>
+</html>

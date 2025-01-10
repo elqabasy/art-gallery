@@ -1,0 +1,154 @@
+/* 
+    ID & Name: 222101784 Nour Ahmed Khalaf Mehani
+    ID & Name: 222200002 Mohamed elsayed Nagy
+    Course: CSE211 Web Programming
+    Assignment: Course Project
+    Date: 9 january 2025
+    Description: the purpose of this css file is to style the Registration page (registeration.html) of the website
+*/
+#top-logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+#top-logo img{
+    width: 90px;
+    height: auto;
+}
+#page-title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #BF939B;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #F2F2F2;
+    border-bottom: 2px solid #BF9D8A;
+}
+#header{
+    background-color: #F2F2F2;
+    padding-left: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#main-navigation{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #BF9D8A;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+#main-navigation a{
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#main-navigation a:hover{
+    background-color: #FFFFFF;
+    color: #BF9D8A;
+    text-decoration: underline;
+}
+#image-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 300px;
+    margin: auto;
+}
+#img-section img{
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#form-section{
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px soild #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+#form-section h3{
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+#form-section label{
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+#form-section input[type="text"], #form-section input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#form-section label[for="male"],#form-section label[for="female"]{
+    display: inline-block;
+    margin-right: 10px;
+    color: #555;
+}
+#form-section input[type="radio"]{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+#form-section button{
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px 1%;
+    margin-left: 100px;
+}
+#form-section button[type="reset"]{
+    background-color: #f44336;
+    margin-left: 100px;
+}
+#form-section button:hover{
+    opacity: 0.9;
+}
+#form-section p{
+    text-align: center;
+    font-size: 14px;
+    color:#777;
+}
+#form-section a{
+    color: #007BFF;
+    text-decoration: none;
+}
+#form-section a:hover{
+    text-decoration: underline;
+}
+#footer{
+    border-color: #F2F2F2;
+    color: #BF939B;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid #F2F2F2;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+#footer a{
+    color: #bf8b94;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+#footer a:hover{
+    color: #BF9D8A;
+    text-decoration: underline;
+}
