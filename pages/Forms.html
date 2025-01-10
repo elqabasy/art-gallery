@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Grade Management</title>
     <link rel="stylesheet" href="../css/forms.css">
 </head>
+
 <body>
     <div id="top-logo">
         <img src="../images/image02.png" alt="Art Gallery Collective logo">
@@ -35,7 +37,7 @@
         </select>
     </div>
 
-    <form id="grade_form" class="hidden">
+    <form id="grade_form" class="hidden" action="./save_grades.php">
         <div class="group">
             <label class="label_t" for="student_Name">Student Name:</b></label>
             <input type="text" id="student_Name" required>
@@ -79,29 +81,29 @@
     </form>
 
     <div class="result" id="result"></div>
-    
+
     <script>
-        const student_Grades={};
-        function toggleForm(){
+        const student_Grades = {};
+        function toggleForm() {
             const action = document.getElementById('action').value;
             const grade_form = document.getElementById('grade_form');
             const input_field = document.getElementById('input_field');
             const researchFields = document.getElementById('researchFields');
 
-        grade_form.classList.remove('hidden');
+            grade_form.classList.remove('hidden');
 
-        if (action === 'input'){
-            input_field.classList.remove('hidden');
-            researchFields.classList.add('hidden');
-            document.getElementById('student_Name').required =true;
+            if (action === 'input') {
+                input_field.classList.remove('hidden');
+                researchFields.classList.add('hidden');
+                document.getElementById('student_Name').required = true;
+            }
+            else {
+                researchFields.classList.remove('hidden');
+                input_field.classList.add('hidden');
+                document.getElementById('student_Name').required = false;
+            }
         }
-        else {
-            researchFields.classList.remove('hidden');
-            input_field.classList.add('hidden');
-            document.getElementById('student_Name').required = false;
-        }
-        }
-        function saveGrades(){
+        function saveGrades() {
             const name = document.getElementById('student_Name').value;
             const id = document.getElementById('student_ID').value;
             const course = document.getElementById('course').value;
@@ -110,19 +112,19 @@
             const quizzes = parseFloat(document.getElementById('quizzes').value) || 0;
             const project = parseFloat(document.getElementById('project').value) || 0;
 
-            if (!id || !course || !name){
+            if (!id || !course || !name) {
                 document.getElementById('result').innerText = "Error: Please fill out all required fields.";
                 return;
             }
 
-            if (!student_Grades[id]){
-                student_Grades[id]={ name, grades:{} };
+            if (!student_Grades[id]) {
+                student_Grades[id] = { name, grades: {} };
             }
-            student_Grades[id].grades[course] = { exams , assignments , quizzes , project};
+            student_Grades[id].grades[course] = { exams, assignments, quizzes, project };
             document.getElementById('result').innerText = `Grades saved successfully for ${name} (${course}).`;
         }
 
-        function getGrades(){
+        function getGrades() {
             const id = document.getElementById('student_ID').value;
             const course = document.getElementById('course').value;
 
@@ -133,18 +135,16 @@
 
             const student = student_Grades[id];
 
-            if (!student || !student.grades[course]){
+            if (!student || !student.grades[course]) {
                 document.getElementById('result').innerText = `No grades found for this student in ${course}.`;
                 return;
             }
-            const { exams, assignments, quizzes, project} = student.grades[course];
-            document.getElementById('result').innerText = 
+            const { exams, assignments, quizzes, project } = student.grades[course];
+            document.getElementById('result').innerText =
                 `Grades for ${student.name} (${course}):
                 Exams: ${exams}, Assignments: ${assignments}, Quizzes: ${quizzes}, Projects: ${projects}.`;
 
         }
-
-        // form of student grade calculator
     </script>
     <hr>
     <h3 id="SGC">Student Grade Calculator</h3>
@@ -158,7 +158,7 @@
             <input class="input_i" type="number" id="quizzes_q" max="10" required>
         </div>
         <div class="form_group">
-            <label for="exams_e">Exams (Out of 50):</label>  
+            <label for="exams_e">Exams (Out of 50):</label>
             <input class="input_i" type="number" id="exams_e" max="50" required>
         </div>
         <div class="form_group">
@@ -169,47 +169,46 @@
     </form>
     <div class="result_r" id="result_r"></div>
     <script>
-        function calculateGrade(){
-            const assignments_a = parseFloat(document.getElementById('assignments_a').value) ||0;
-            const quizzes_q = parseFloat(document.getElementById('quizzes_q').value) ||0;
-            const exams_e = parseFloat(document.getElementById('exams_e').value) ||0;
-            const project_p = parseFloat(document.getElementById('project_p').value) ||0;
-            if (assignments_a > 20 || quizzes_q > 10 || exams_e >50 || project_p > 20){
+        function calculateGrade() {
+            const assignments_a = parseFloat(document.getElementById('assignments_a').value) || 0;
+            const quizzes_q = parseFloat(document.getElementById('quizzes_q').value) || 0;
+            const exams_e = parseFloat(document.getElementById('exams_e').value) || 0;
+            const project_p = parseFloat(document.getElementById('project_p').value) || 0;
+            if (assignments_a > 20 || quizzes_q > 10 || exams_e > 50 || project_p > 20) {
                 document.getElementById('result_r').innerText = "Error: The percentage of total is greater than the maximum percentage and please put the correct grade of each label ";
                 return;
             }
 
             const totalScore = assignments_a + quizzes_q + exams_e + project_p;
-            const maxScore = 20 + 10 + 50 + 20; 
-            const percentage = (totalScore / maxScore) * 100;
             let grade = '';
-            if (totalScore >=97){
+            if (totalScore >= 97) {
                 grade = 'A+';
-            } else if (totalScore >=93){
+            } else if (totalScore >= 93) {
                 grade = 'A';
-            } else if (totalScore >=89){
+            } else if (totalScore >= 89) {
                 grade = 'A-';
-            } else if (totalScore >=80){
+            } else if (totalScore >= 80) {
                 grade = 'B';
-            } else if (totalScore >=70){
+            } else if (totalScore >= 70) {
                 grade = 'C';
-            } else if (totalScore >=60){
+            } else if (totalScore >= 60) {
                 grade = 'D';
             } else {
                 grade = 'F';
             }
 
-            document.getElementById('result_r').innerText=
-                `Total Score: ${totalScore.toFixed(2)} / ${maxScore}\nPercentage: ${percentage.toFixed(2)}%\nGrade: ${grade}`;
+            document.getElementById('result_r').innerText =
+                `Total Score: ${totalScore.toFixed(2)} / 100 \nGrade: ${grade}`;
         }
     </script>
     <footer id="footer">
         <hr>
-            <a href="mailto:nourkhalaf@gmail.com">Email Us</a>&nbsp;|
-            <a href="https://www.facebook.com/">Facebook</a>&nbsp;|
-            <a href="https://www.instagram.com/">Instagram</a>&nbsp;|
-            <a href="../pages/about.html">About Us</a><br>
-            &copy; Nour Ahmed Khalaf Mehani 222101784 , mohamed elsayed nagy 222200002 , all rights reserved.<br>   
+        <a href="mailto:nourkhalaf@gmail.com">Email Us</a>&nbsp;|
+        <a href="https://www.facebook.com/">Facebook</a>&nbsp;|
+        <a href="https://www.instagram.com/">Instagram</a>&nbsp;|
+        <a href="../pages/about.html">About Us</a><br>
+        &copy; Nour Ahmed Khalaf Mehani 222101784 , mohamed elsayed nagy 222200002 , all rights reserved.<br>
     </footer>
 </body>
+
 </html>

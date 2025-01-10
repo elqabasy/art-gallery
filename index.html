@@ -1,13 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Gallery Collective </title>
     <link rel="stylesheet" href="./css/index.css">
 </head>
-
 <body>
     <div id="top-logo">
         <img src="./images/image02.png" alt="Art Gallery Collective logo">
@@ -15,7 +13,7 @@
     <h1 id="page-title">Home</h1>
     <header id="header">
         <nav id="main-navigation">
-            <a href="index.html">Home</a>&nbsp;|
+            <a href="./index.html">Home</a>&nbsp;|
             <a href="./pages/about.html">About Us</a>&nbsp;|
             <a href="./pages/contact.html">Contact Us</a>&nbsp;|
             <a href="https://www.gu.edu.eg/">GU</a>&nbsp;|
@@ -34,40 +32,39 @@
     </section>
     <article id="article">
         <h2><b>Welcome To Our Gallery!</b></h2>
-        <section id="welcome">
-            <p>Discover a world of creativity and inspiration at Art Gallery .<br>
-                we showcase work and established artists in variety of styles and mediums.(paintings to stunning
-                sculptures, our exhibition celebrate the beauty of art.)<br>
-            </p>
-        </section>
-        <section id="video">
-            <video width="680" height="360" controls>
-                <source src="./videos/video01.mp4" type="video/mp4">
-                <source src="./videos/video01.ogg" type="video/ogg">
-            </video>
-        </section>
-        <section id="upcoming-events">
-            <h2>upcoming events this month</h2>
-            <ul>
-                <li><b>spring exhibition:</b>23 january, 2025</li>
-                <li><b>workshops: modern Sculpting Techniques</b> 19 january, 20225</li>
-            </ul>
-        </section>
-        <h2>our team and staff:</h2>
-        <section id="team">
-            <p>
-                <img src="./images/person1.jpg" alt="profile of person1"><br>
-                <span>Name:</span> Nour Ahmed Khalaf Mehani<br>
-                <span>Bio:</span> 20 years old, member since 2019<br>
-                <span>Role:</span> senior artist<br>
-            </p>
+            <section id="welcome">
+                <p>Discover a world of creativity and inspiration at Art Gallery .<br>
+                    we showcase work and established artists in variety of styles and mediums.(paintings to stunning sculptures, our exhibition celebrate the beauty of art.)<br>
+                </p>
+            </section>
+            <section id="video">
+                <video width="680" height="360" controls>
+                    <source src="./videos/video01.mp4" type="video/mp4">
+                    <source src="videos/video01.ogg" type="video/ogg">
+                </video>
+            </section>
+            <section id="upcoming-events">
+                <h2>upcoming events this month</h2>
+                <ul>
+                    <li><b>spring exhibition:</b>23 january, 2025</li>
+                    <li><b>workshops: modern Sculpting Techniques</b> 19 january, 20225</li>
+                </ul>
+            </section>
+            <h2>our team and staff:</h2>
+            <section id="team">
+                <p>
+                    <img src="./images/person1.jpg" alt="profile of person1"><br>
+                    <span>Name:</span> Nour Ahmed Khalaf Mehani<br>
+                    <span>Bio:</span> 20 years old, member since 2019<br>
+                    <span>Role:</span> senior artist<br>
+                </p>
 
-            <p>
-                <img src="./images/person2.jpg" alt="profile of person2"><br>
-                <span>Name:</span> Mohamed elsayed Nagy<br>
-                <span>Bio:</span> 20 years old, member since 2020<br>
-                <span>Role:</span> senior artist<br>
-            </p>
+                <p>
+                    <img src="./images/person2.jpg" alt="profile of person2"><br>
+                    <span>Name:</span> Mohamed elsayed Nagy<br>
+                    <span>Bio:</span> 20 years old, member since 2020<br>
+                    <span>Role:</span> senior artist<br>
+                </p>
         </section>
     </article>
 
@@ -99,28 +96,25 @@
             <p>our featured artist of the month is Nour. known for her breath taking landscapes!</p>
         </marquee>
         <h3><b>Advertisement:</b></h3>
-        <p id="offer"><b>special offer: </b>attend our<i> next exhibition</i> at a discounted rate!<br>
+        <p><b>special offer:</b>attend our<i> next exhibition</i> at a discounted rate!<br>
             don't miss this opportunity!
         </p>
         <br>
-        <p id="image_i">
-            <img src="./images/image04.png" width="150" height="200" alt="ad_banner">
-        </p>
-        <p id="time"><b>When:</b> February 10, 2025<br>
-            <b>Where: </b>location
-        </p>
+        <img src="./images/image04.png" width="150" height="200" alt="ad_banner"><br>
+        <p><b>When:</b> February 10, 2025<br>
+        <b>Where: </b>location</p>
     </aside>
     <footer id="footer">
         <a href="mailto:nourkhalaf@gmail.com">Email Us</a>&nbsp;|
         <a href="https://www.facebook.com/">Facebook</a>&nbsp;|
         <a href="https://www.instagram.com/">Instagram</a>&nbsp;|
-        <a href="pages/about.html">About Us</a><br>
+        <a href="./pages/about.html">About Us</a><br>
         &copy; Nour Ahmed Khalaf Mehani 222101784 , mohamed elsayed nagy 222200002 , all rights reserved.<br>
     </footer>
     <script>
         document.addEventListener("mousemove", parallaxHero);
 
-        function parallaxHero(event) {
+        function parallaxHero(event){
             const hero = document.getElementById("parallax-hero");
             const speed = hero.getAttribute("data-speed") || 5;
 
@@ -131,5 +125,4 @@
         }
     </script>
 </body>
-
 </html>
